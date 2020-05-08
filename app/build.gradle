@@ -1,19 +1,19 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: Plugins.application
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.androidExtension
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion Configs.compileSdkVersion
+    buildToolsVersion Configs.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.citizenme.kotlinbuildsrc"
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        applicationId Configs.applicationId
+        minSdkVersion Configs.minSdkVersion
+        targetSdkVersion Configs.targetSdkVersion
+        versionCode Configs.versionCode
+        versionName Configs.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner Configs.testInstrumentationRunner
     }
 
     buildTypes {
@@ -27,7 +27,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation Dependencies.kotlinStdlib
     implementation Dependencies.appCompat
     implementation Dependencies.coreKtx
     implementation Dependencies.constraintlayout
